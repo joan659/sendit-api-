@@ -26,8 +26,8 @@ def test_upload_document(client, test_user):
 
     file_data = io.BytesIO(b"Hello from pytest")
 
-response = client.post(
-    "/documents/upload",
+    response = client.post(
+        "/documents/upload",
         headers=headers,
         files={
             "file": (

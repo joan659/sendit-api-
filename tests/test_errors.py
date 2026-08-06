@@ -14,6 +14,6 @@ def test_unauthorized_upload(client):
     response = client.post("/documents/upload")
 
     print(response.status_code)
-print(response.text)
+    print(response.text)
 
-assert response.status_code in [401, 422]
+    assert response.status_code in [401, 422]
