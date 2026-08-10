@@ -8,3 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
+# Test database
+test.db
+
+# Uploaded test files
+uploads/
+
+# Pytest
+.pytest_cache/

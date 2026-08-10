@@ -2,10 +2,8 @@ import io
 
 
 def get_auth_headers(client, test_user):
-    # Register user
     client.post("/register", json=test_user)
 
-    # Login
     response = client.post(
         "/login",
         data={
@@ -37,6 +35,8 @@ def test_upload_document(client, test_user):
             )
         },
         data={
+            "city": "Nairobi",
+            "country": "Kenya",
             "description": "Testing upload"
         }
     )
@@ -45,7 +45,7 @@ def test_upload_document(client, test_user):
 
     data = response.json()
 
-    assert data["message"] == "File uploaded successfully"
+    assert data["message"] == "Document uploaded successfully"
 
 
 def test_list_documents(client, test_user):
@@ -57,7 +57,6 @@ def test_list_documents(client, test_user):
     )
 
     assert response.status_code == 200
-
     assert isinstance(response.json(), list)
 
 

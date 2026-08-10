@@ -5,7 +5,7 @@ from sqlmodel import SQLModel, Session, create_engine
 from main import app
 from database.session import get_session
 
-# Test database
+
 TEST_DATABASE_URL = "sqlite:///./test.db"
 
 engine = create_engine(
